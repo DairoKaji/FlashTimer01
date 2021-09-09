@@ -1,0 +1,2 @@
+rootProject.name = "FlashTimer01"
+include ':app'
