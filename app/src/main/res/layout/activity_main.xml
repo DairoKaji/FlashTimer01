@@ -8,99 +8,133 @@
 
     <Button
         android:id="@+id/button_flash"
-        android:layout_width="120"
-        android:layout_height="120"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
         android:text="Button"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="106dp" />
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTime" />
 
     <Button
         android:id="@+id/button_tp"
-        android:layout_width="120"
-        android:layout_height="120"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
         android:text="Button"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="236dp" />
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/button_flash" />
 
     <TextView
         android:id="@+id/time_flash"
         android:layout_width="124dp"
         android:layout_height="48dp"
+        android:layout_marginStart="32dp"
         android:text="TextView"
-        tools:layout_editor_absoluteX="206dp"
-        tools:layout_editor_absoluteY="141dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/button_flash"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/button_flash" />
 
     <TextView
         android:id="@+id/time_tp"
         android:layout_width="124dp"
         android:layout_height="48dp"
+        android:layout_marginStart="32dp"
         android:text="TextView"
-        tools:layout_editor_absoluteX="206dp"
-        tools:layout_editor_absoluteY="260dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/button_tp"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/button_tp" />
 
     <Button
         android:id="@+id/button_enemy_level_plus"
-        android:layout_width="80"
-        android:layout_height="80"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="24dp"
         android:text="Button"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="438dp" />
+        app:layout_constraintEnd_toStartOf="@+id/button_enemy_level_minus"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enemy_level" />
 
     <Button
         android:id="@+id/button_enemy_level_minus"
-        android:layout_width="80"
-        android:layout_height="80"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:text="Button"
-        tools:layout_editor_absoluteX="118dp"
-        tools:layout_editor_absoluteY="438dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/button_enemy_level_plus"
+        app:layout_constraintEnd_toStartOf="@+id/button_ionian_boots"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button_enemy_level_plus"
+        app:layout_constraintTop_toTopOf="@+id/button_enemy_level_plus" />
 
     <Button
         android:id="@+id/button_cosmic_insight"
-        android:layout_width="80"
-        android:layout_height="80"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:text="Button"
-        tools:layout_editor_absoluteX="302dp"
-        tools:layout_editor_absoluteY="438dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/button_ionian_boots"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button_ionian_boots"
+        app:layout_constraintTop_toTopOf="@+id/button_ionian_boots" />
 
-    <Button
+    <ImageButton
         android:id="@+id/button_ionian_boots"
-        android:layout_width="80"
-        android:layout_height="80"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/ionia_boots"
         android:text="Button"
-        tools:layout_editor_absoluteX="213dp"
-        tools:layout_editor_absoluteY="438dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/button_enemy_level_minus"
+        app:layout_constraintEnd_toStartOf="@+id/button_cosmic_insight"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button_enemy_level_minus"
+        app:layout_constraintTop_toTopOf="@+id/button_enemy_level_minus" />
 
     <TextView
         android:id="@+id/enemy_level"
-        android:layout_width="111dp"
-        android:layout_height="41dp"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="58dp"
-        tools:layout_editor_absoluteY="379dp" />
+        android:layout_width="46dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="24dp"
+        android:text="Enemy"
+        app:layout_constraintEnd_toStartOf="@+id/enemy_level_count"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_tp" />
 
     <TextView
         android:id="@+id/game_time"
         android:layout_width="143dp"
         android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
         android:text="TextView"
-        tools:layout_editor_absoluteX="198dp"
-        tools:layout_editor_absoluteY="10dp" />
-
-    <Button
-        android:id="@+id/button_game_time_plus"
-        android:layout_width="50"
-        android:layout_height="50"
-        android:text="Button"
-        tools:layout_editor_absoluteX="220dp"
-        tools:layout_editor_absoluteY="50dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/editTextTime"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button_game_time_minus"
-        android:layout_width="50"
-        android:layout_height="50"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:text="Button"
-        tools:layout_editor_absoluteX="280dp"
-        tools:layout_editor_absoluteY="50dp" />
+        app:layout_constraintEnd_toEndOf="@+id/game_time"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button_game_time_plus"
+        app:layout_constraintTop_toTopOf="@+id/button_game_time_plus" />
+
+    <Button
+        android:id="@+id/button_game_time_plus"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:text="Button"
+        app:layout_constraintEnd_toStartOf="@+id/button_game_time_minus"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/editTextTime"
+        app:layout_constraintStart_toStartOf="@+id/game_time"
+        app:layout_constraintTop_toBottomOf="@+id/game_time" />
 
     <EditText
         android:id="@+id/editTextTime"
@@ -110,6 +144,32 @@
         android:layout_marginTop="36dp"
         android:ems="10"
         android:inputType="time"
+        app:layout_constraintEnd_toStartOf="@+id/game_time"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.5"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/enemy_level_count"
+        android:layout_width="38dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="1"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/enemy_level"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/enemy_level"
+        app:layout_constraintTop_toTopOf="@+id/enemy_level" />
 </androidx.constraintlayout.widget.ConstraintLayout>
