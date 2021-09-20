@@ -7,34 +7,22 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.widget.Toast
 import com.github.flashtimer01.databinding.ActivityMainBinding
+import android.widget.Chronometer
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
-    inner class GameCountDownTimer(millisInFuture: Long, countDownInterval: Long) :
-        CountDownTimer(millisInFuture, countDownInterval) {
-
-        var isRunning = false
-
-        override fun onTick(millisUntilFinished: Long){
-            val minute = millisUntilFinished / 1000L / 60L
-            val second = millisUntilFinished / 1000L % 60L
-            binding.gameTime.text = "%1d:%2$02d".format(minute ,second)
-        }
-
-        override fun onFinish() {
-            binding.gameTime.text = "0:00"
-        }
-    }
     private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val chronometer:Chronometer = findViewById<Chronometer>(R.id.testTime)
 
-        val timer = GameCountDownTimer(3 * 60 * 1000, 100)
         var nowLevel :Int = 1
         var hasCosmicInsight :Int = 0
         var hasIonianBoots :Int = 0
+        var isRunning = false
 
         binding.gameTime.text = "3:00"
 
@@ -75,17 +63,20 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
         }
         binding.buttonGameStart.setOnClickListener {
-            timer.isRunning = when (timer.isRunning) {
+            isRunning = when(isRunning){
                 true -> {
-                    timer.cancel()
+                    chronometer.stop()
+                    Toast.makeText(applicationContext , "stop", Toast.LENGTH_SHORT).show()
                     false
                 }
                 false -> {
-                    timer.start()
+                    chronometer.start()
+                    Toast.makeText(applicationContext , "start", Toast.LENGTH_SHORT).show()
                     true
                 }
 
             }
+            chronometer.start()
         }
     }
     private fun enemyLevelCalc(opSign : String,nowLevelFun:Int): Int {
